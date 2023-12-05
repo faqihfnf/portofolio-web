@@ -1,0 +1,76 @@
+/* body {
+  min-height: 5000px;
+} */
+
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #e6fcff;
+}
+
+#skill,
+#certificate {
+  padding-top: 4rem;
+  background-color: #e6fcff;
+}
+
+#about,
+#project,
+#contact {
+  padding-top: 4rem;
+}
+
+/* Ganti warna ikon next dan previous */
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(100%); /* Membalikkan warna ikon */
+}
+
+/* .navbar {
+  background-color: #03343f;
+}
+
+.nav-link:hover {
+  color: blueviolet;
+} */
+
+footer {
+  padding: 20px;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  background-color: #03343f;
+}
+.media {
+  display: flex;
+  justify-content: center;
+}
+
+.media a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 2rem;
+  color: black;
+
+  margin: 10px;
+  border-radius: 30%;
+}
+
+.media a:hover {
+  background-color: white;
+  transition: 0.5s;
+}
+
+.media a:hover i {
+  color: blueviolet;
+  transition: 0.5s;
+}
+
+.designer {
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 1000;
+  color: chocolate;
+  margin: 0px 5px;
+}
