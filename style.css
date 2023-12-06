@@ -19,6 +19,16 @@
   padding-top: 4rem;
 }
 
+section {
+  padding-top: 4rem;
+}
+
+.carousel-item .card {
+  width: 400px;
+  margin: 0 auto;
+  height: 400px;
+}
+
 /* Ganti warna ikon next dan previous */
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
@@ -51,7 +61,6 @@ footer {
   padding: 10px;
   font-size: 2rem;
   color: black;
-
   margin: 10px;
   border-radius: 30%;
 }
@@ -73,4 +82,88 @@ footer {
   font-weight: 1000;
   color: chocolate;
   margin: 0px 5px;
+}
+
+/*? style marquee */
+
+.marquee-set {
+  /* margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}
+
+:root {
+  --marquee-width: 90vw;
+  --marquee-height: 20vh;
+  --marquee-element-displayed: 6;
+  --marquee-element-width: calc(var(--marquee-width) / var(--marquee-element-displayed));
+  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+}
+
+.marquee {
+  width: var(--marquee-width);
+  height: var(--marquee-height);
+  background-color: blueviolet;
+  color: white;
+  border-radius: 35px;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee::before,
+.marquee::after {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  content: "";
+  z-index: 1;
+  background-color: red;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, blueviolet 0%, transparent 100%);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, blueviolet 0%, transparent 100%);
+}
+
+/* display: flex membuat icon nya menjadi horizontal */
+.marquee-content {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  animation: scrolling var(--marquee-animation-duration) linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+.marquee-content li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--marquee-element-width);
+  max-height: 100%;
+  font-size: calc(var(--marquee-height) * 2 / 4);
+  white-space: nowrap;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
+  }
 }
